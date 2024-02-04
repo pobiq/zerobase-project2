@@ -10,8 +10,7 @@ import zerobase.weather.repository.JpaMemoRepository;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional
@@ -29,7 +28,7 @@ public class JpaMemoRepositoryTest {
 
         //then
         List<Memo> memoList = jpaMemoRepository.findAll();
-        assertTrue(memoList.size() > 0);
+        assertFalse(memoList.isEmpty());
     }
 
     @Test
